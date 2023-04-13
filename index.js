@@ -5,22 +5,10 @@ const productManager = new ProductManager();
 const context = async () => {
     const test = await productManager.getProducts();
     //console.log(test)
-    /*let testProduct = {
-        title: 'producto prueba',
-        description: 'Este es un producto prueba',
-        price: 200,
-        thumbnail: 'Sin imagen',
-        code: 'abc123',
-        stock: 30
-    }*/
-    //Agrego el producto test solicitado en el desafio   
-    //await productManager.addProducts(testProduct)
 
-    //Me trae todos los productos del listado
-    //const newProduct = await productManager.getProducts();
-    //console.log('This is the list of products:', newProduct)
-    //Busco Item By ID
-    //await productManager.getProductsById(2);
+   
+
+  
     //Agrego un producto con todos sus campos
     //await productManager.addProducts({'title':'Rolex GMT MasteII', 'description':'This model features a black dial and a two-colour Cerachrom bezel insert in blue and black ceramic', 'price': 23950, 'thumbnail':'thumbnail', 'code':'WARO','stock': 3})
     //await productManager.addProducts({'title':'Rolex Submariner', 'description':'The Submariner's design has been entirely dictated by the practical needs of divers.', 'price': 14500, 'thumbnail':'thumbnail', 'code':'WARO','stock': 10})
@@ -33,12 +21,6 @@ const context = async () => {
     //await productManager.addProducts({'title':'Chopard Mille Miglia', 'description':'Stainless Steel Rubber 39mm Mille Miglia Chronograph Automatic Watch Silver', 'price': 2995, 'thumbnail':'thumbnail', 'code':'WACH','stock': 5})
     //await productManager.addProducts({'title':'Chopard Happy Diamonds', 'description':'Contemporary, refined, assertive, the sporty-chi', 'price': 6740, 'thumbnail':'thumbnail', 'code':'WACH','stock': 10})
 
-    //Agrego un producto con campos faltantes para que me arroje el mensaje que falta completar campos
-    //await productManager.addProducts('prod2', 300, 'thumbnail', 'AR20', 5)
-    //Borro un producto
-    //await productManager.deleteProduct(5);
-    //Hago update de la informaicon de un producto
-    //await productManager.updateProduct(6, { title: 'Este es el producto updated', description: 'Este es el producto con update' });
 }
 
 context();
