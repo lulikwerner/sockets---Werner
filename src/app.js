@@ -1,31 +1,21 @@
-
 import express from 'express';
-import ProductManager from '../managers/productManager.js';
-
+import productRouter from './routes/products.router.js';
+import __dirname from './utils.js'
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(`${__dirname}/public`)); 
 
-
-const productManager = new ProductManager();
-app.get('/products/', async (req, res) => {
-    const { limit } = req.query;
-    const products = await productManager.getProducts();
-    if (!limit) return res.status(200).send({ products });
-    const limitedProducts = products.slice(0, limit);
-    if (isNaN(limit)) return res.status(400).send({ status: 'error', message: 'Please enter a valid amount' });
-    return res.status(200).send({ limitedProducts });
-});
+app.use('/api/products', productRouter);
 
 
 
-app.get('/products/:pid', async (req, res) => {
-    const { pid } = req.params
-    const result = await productManager.getProductsById(Number(pid))
-    if (isNaN(pid)) return res.status(400).send({ status: 'error', message: 'Please enter a valid id' });
-    if (!result) return res.status(400).send({ status: 'error', message: 'Product not found' })
 
-    return res.status(200).send({ result });
-})
+
+
+
+
 
 
 app.listen(8080, () => console.log('Listening on Port 8080'))

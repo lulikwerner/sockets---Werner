@@ -1,14 +1,5 @@
 [
 	{
-		"title": "Rolex GMT MasteII",
-		"description": "This model features a black dial and a two-colour Cerachrom bezel insert in blue and black ceramic",
-		"price": 23950,
-		"thumbnail": "Sin imagen",
-		"code": "WARO",
-		"stock": 3,
-		"id": 1
-	},
-	{
 		"title": "Rolex Submariner",
 		"description": "The Submariner's design has been entirely dictated by the practical needs of divers.",
 		"price": 14500,
@@ -45,15 +36,6 @@
 		"id": 5
 	},
 	{
-		"title": "Panerai Submersible QuarantaQuattro ESteel™ Blu Profondo",
-		"description": "Automatic mechanical, P.900 calibre",
-		"price": "11000",
-		"thumbnail": "thumbnail",
-		"code": "WAPA",
-		"stock": 9,
-		"id": 6
-	},
-	{
 		"title": "Panerai Radiomir Quaranta",
 		"description": "Black sun-brushed with luminous Arabic numerals",
 		"price": "6000",
@@ -88,6 +70,108 @@
 		"code": "WACH",
 		"stock": 10,
 		"id": 10
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 11
+	},
+	{
+		"title": "Ulysses Nardin FreakOne",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 12
+	},
+	{
+		"title": "Ulysses Nardin FreakOne",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 13
+	},
+	{
+		"title": "prueba",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 25,
+		"id": 14,
+		"status": true,
+		"category": "Watches"
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 15
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 16
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 17
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 18
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"price": 19500,
+		"thumbnails": "No image",
+		"code": "WAULNA",
+		"stock": 9,
+		"id": 19
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"code": "WAULNA",
+		"price": 19500,
+		"status": true,
+		"stock": 9,
+		"category": "Watches",
+		"thumbnails": "No image",
+		"id": 20
+	},
+	{
+		"title": "Ulysses Nardin Freak One",
+		"description": "The Freak that bridges the past to the future",
+		"code": "WAULNA",
+		"price": 19500,
+		"status": true,
+		"stock": 9,
+		"category": "Watches",
+		"id": 21
 	}
-
 ]

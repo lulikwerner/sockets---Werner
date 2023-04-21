@@ -14,18 +14,21 @@ export default class ProductManager {
         }
         return [];
     }
-    addProducts = async ({title, description, price, thumbnail, code, stock}) => {
-        if (!title || !description || !price || !thumbnail || !code || !stock) {
+    addProducts = async ({title, description, code, price, status, stock, category, thumbnails}) => {
+        try{
+        if (!title || !description || !code || !price || !status || !stock || !category) {
             return console.log('Error! one or more fields are incomplete');
         }
         const products = await this.getProducts();
         const product = {
             title,
             description,
-            price,
-            thumbnail,
             code,
-            stock
+            price,
+            status,
+            stock,
+            category,
+ 
         }
         if (products.length === 0) {
             product.id = 1;
@@ -35,8 +38,12 @@ export default class ProductManager {
         products.push(product);
         await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
         return product;
-
+    }catch(error){
+        console.log(error)
     }
+    }
+    
+    
 
     getProductsById = async (id) => {
         try {
@@ -57,44 +64,47 @@ export default class ProductManager {
 
     updateProduct = async (id, updatedProduct) => {
         try {
-            const data = await fs.promises.readFile(this.path, 'utf-8');
-            const products = JSON.parse(data);
-            const productIndex = products.findIndex(p => p.id === id);
-            if (productIndex === -1) {
-                throw new Error(`We can not make an update to the product with ${id} because it does not exist`);
-              
-            }
-            //e esta manera Lo que va a pasar es que js va a decir: Okey quiero agregar la propiedad title al objeto que ya tiene esta propiedad, entonces le voy a modificar sus contenidos.Y lo mismo con el price En el caso que quiera cambiar el price y el title
-          
-            const productToUpdate = { ...products[productIndex], ...updatedProduct };
-             products[productIndex] = productToUpdate;
-                await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
-                console.log(`The product with id ${id} has succefully been modified`)
-                console.log(`The new values for the product with id ${id}`, products[productIndex])
-            
+          const data = await fs.promises.readFile(this.path, 'utf-8');
+          const products = JSON.parse(data);
+          const productIndex = products.findIndex(p => p.id === parseInt(id));
+          console.log(typeof(id)); // This should print "string"
+      
+          if (productIndex === -1) {
+            throw new Error(`We cannot make an update to the product with id ${id} because it does not exist`);
+          }
+      
+          const productToUpdate = { ...products[productIndex], ...updatedProduct };
+          products[productIndex] = productToUpdate;
+          await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
+          console.log(`The product with id ${id} has been successfully modified`);
+          console.log(`The new values for the product with id ${id}`, products[productIndex]);
         } catch (error) {
-            console.log(error);
-            return null;
+          return { error: error.message };
         }
-    }
+      }
+      
 
     deleteProduct = async (id) => {
         try {
-            const data = await fs.promises.readFile(this.path, 'utf-8')
-            const products = JSON.parse(data)
-            const productf = products.find(p => p.id === id)
-            if (!productf) {
-                console.log(`We could not find a product that matches the id: ${id}`)
+            const data = await fs.promises.readFile(this.path, 'utf-8');
+            const products = JSON.parse(data);
+            const productIndex = products.findIndex(p => p.id === parseInt(id));
+            if (productIndex === -1) {
+                console.log(`We could not find a product that matches the id: ${id}`);
+                return null;
             } else {
-                const productNotEliminated = products.filter(p => p.id != id)
-                await fs.promises.writeFile(this.path, JSON.stringify(productNotEliminated, null, '\t'))
-                console.log(`The product with id ${id} has been eliminated`)
+                const productNotEliminated = products.filter(p => p.id !== parseInt(id));
+                await fs.promises.writeFile(this.path, JSON.stringify(productNotEliminated, null, '\t'));
+                console.log(`The product with id ${id} has been eliminated`);
+                return products[productIndex];
             }
         } catch (error) {
             console.log(error);
             return null;
         }
     }
+    
+    
 }
 
 
