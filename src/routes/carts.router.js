@@ -51,11 +51,11 @@ router.post('/:cid/product/:pid', async (req, res) => {
         //Si lo encuentra en el carrito sumo la cantidad del producto que ya esta en el carrito con la nueva cantidad que le estoy pasando
         if (index !== -1) {
             cart.pcart[index].qty += Number(pcart[0].qty);
-            //Si el producto no se encuentra en el carrito hago un push del producto con su cantidad
+        //Si el producto no se encuentra en el carrito hago un push del producto con su cantidad
         } else { cart.pcart.push({ pid: Number(pid), qty: Number(pcart[0].qty) }); }
         //Hago el update del producto    
         await CartManager.updateCart(cid, cart);
-        return res.status(200).send({ status: 'success', message: 'producto agregado' });
+        return res.status(200).send({ status: 'success', message: 'product added succesfully' });
     } 
     catch (error) {
         return res.status(400).send({ status: 'failed', message: 'Cart not found' });

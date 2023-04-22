@@ -14,7 +14,7 @@ export default class CartManager {
       //Asigno el id al carrito si no hay ninguno por defecto es 1 sino le sumo uno al id del ultimo agregado
       const cid = carts.length > 0 ? carts[carts.length - 1].cid + 1 : 1;
       //Creo el new cart
-      const newCart = { cid, pcart: { pid, qty } };
+      const newCart = { cid, pcart: [{ pid, qty }] };
       carts.push(newCart);
       await fs.promises.writeFile(this.path, JSON.stringify(carts, null, '\t'));
       return newCart;
