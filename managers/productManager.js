@@ -79,8 +79,7 @@ export default class ProductManager {
             const productToUpdate = { ...products[productIndex], ...updatedProduct, id: parseInt(id) };
             products[productIndex] = productToUpdate;
             await fs.promises.writeFile(this.path, JSON.stringify(products, null, '\t'));
-            console.log(`The product with id ${id} has been successfully modified`);
-            console.log(`The new values for the product with id ${id}`, products[productIndex]);
+            return productToUpdate;
         } catch (error) {
             return { error: error.message };
         }

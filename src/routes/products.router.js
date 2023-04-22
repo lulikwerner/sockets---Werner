@@ -74,10 +74,11 @@ router.put('/:pid', async (req, res) => {
     const productUpdate = req.body;
     try {
         const updateProduct = await ProductManager.updateProduct(pid, productUpdate);
-        //Si retorna que el producto no fue updated devuelvo error
-        if (updateProduct) res.status(400).send({ error: "Update product failed" });
-        //Sino devuelvo producto modificado exitosamente
-        return res.status(200).send({ status: "success", message: `The product with id ${pid} has been succesfully updated` });
+        //Si Modifico algo retorno que el producto fue modificado con exito
+        if (updateProduct) return res.status(200).send({ status: "success", message: `The product with id ${pid} has been succesfully updated` });
+        //Sino devuelvot que no se pudo modifica
+        return res.status(400).send({ error: "Update product failed" });
+        
     }
     catch (error) {
         console.log(error);
