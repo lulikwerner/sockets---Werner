@@ -1,12 +1,12 @@
 [
 	{
-		"title": "Rolex Submariner",
+		"title": "Ulysses Nardin Freak One",
 		"description": "The Submariner's design has been entirely dictated by the practical needs of divers.",
 		"price": 14500,
 		"thumbnail": "Sin imagen",
 		"code": "WARO",
 		"stock": 10,
-		"id": 2
+		"id": 1
 	},
 	{
 		"title": "Cartier Tank Francaise",
@@ -25,15 +25,6 @@
 		"code": "WACA",
 		"stock": 5,
 		"id": 4
-	},
-	{
-		"title": "Panerai Luminor BiTempo",
-		"description": "Automatic mechanical, P.9012 calibre",
-		"price": 10000,
-		"thumbnail": "Sin imagen",
-		"code": "WAPA",
-		"stock": 12,
-		"id": 5
 	},
 	{
 		"title": "Panerai Radiomir Quaranta",

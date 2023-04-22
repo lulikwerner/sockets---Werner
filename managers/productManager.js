@@ -67,7 +67,7 @@ export default class ProductManager {
           const data = await fs.promises.readFile(this.path, 'utf-8');
           const products = JSON.parse(data);
           const productIndex = products.findIndex(p => p.id === parseInt(id));
-          console.log(typeof(id)); // This should print "string"
+          console.log(typeof(id)); 
       
           if (productIndex === -1) {
             throw new Error(`We cannot make an update to the product with id ${id} because it does not exist`);

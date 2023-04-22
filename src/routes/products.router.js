@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
 
 router.put('/:pid', async (req, res) => {
     try {
-        // Datos obtenidos desde el cliente
+   
         const { pid } = req.params
         const productUpdate = req.body
 
