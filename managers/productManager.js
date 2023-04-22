@@ -109,3 +109,24 @@ export default class ProductManager {
 
 
 
+/*const products= new ProductManager()
+
+ const product = {
+	
+		"title": "Chopard Happy Diamonds",
+		"description": "Contemporary, refined, assertive, the sporty-chi",
+		"code": "WACH",
+		"price": 6740,
+		"status": true,
+		"stock": 10,
+		"category": "Watches",
+		"thumbnails": "No image",
+
+ }
+
+  await products.addProducts(product);*/
+    
+
+
+
+

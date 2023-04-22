@@ -17,7 +17,6 @@ router.get('/', async (req, res) => {
 });
 
 
-
 router.get('/:pid', async (req, res) => {
     const { pid } = req.params
     const result = await ProductManager.getProductsById(Number(pid))
@@ -56,10 +55,9 @@ router.post('/', async (req, res) => {
 
 router.put('/:pid', async (req, res) => {
     try {
-   
         const { pid } = req.params
         const productUpdate = req.body
-
+       
         const updateProduct = await ProductManager.updateProduct(pid, productUpdate)
         if (!updateProduct) return res.status(200).send({ status: "success", message: `The product with id ${pid} has been succesfully updated`})
         if (updateProduct.error) return res.status(400).send({ error:"Update product failed" })
