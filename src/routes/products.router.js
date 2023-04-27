@@ -2,11 +2,34 @@ import { Router } from 'express';
 import productManager from '../../managers/productManager.js';
 
 
-const router = Router();
 const ProductManager = new productManager();
 
+const router = Router();
+router.get('/',async (req,res)=>{
+    try {
+      const products = await ProductManager.getProducts();
+      console.log(products)
+      res.render('home', { products });
+    } catch (error) {
+      console.error(error);
+      res.render('error', { error });
+    }
+  })
 
-router.get('/', async (req, res) => {
+
+
+/*router.get('/home', async (req, res) => {
+    try {
+         //Traigo todos los productos si no me envian ningun limit
+         /*const products = await ProductManager.getProducts();
+         console.log(products)
+        
+         if (products.error) return res.status(200).send({ status: 'Sin productos', valueReturned })*/
+      
+
+
+
+/*router.get('/', async (req, res) => {
     const { limit } = req.query;
     try {
         //Traigo todos los productos si no me envian ningun limit
@@ -17,6 +40,7 @@ router.get('/', async (req, res) => {
         //Si me envian un limit hago slice del array por el limite enviado y traigo solo esos productos
         const limitedProducts = products.slice(0, limit);
         return res.status(200).send({ limitedProducts });
+     
     }
     catch (error) {
         console.log(error)
@@ -98,7 +122,7 @@ router.delete('/:pid', async (req, res) => {
     catch (error) {
         console.log(error);
     }
-});
+});*/
 
 
 

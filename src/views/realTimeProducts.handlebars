@@ -1,0 +1,78 @@
+<div class="uk-container">
+	<div uk-grid>
+		<div class="uk-width-1-2">
+			<div class='uk-width-1-1@s'>
+				<h2 class="uk-text-center">Main image</h2>
+				<div id="media-uploader1" name="media-uploader1" class="" style="">
+					<div class="dz-message" style="color:'.get_option('taxCrt-setting-font').';">
+						<span><i class="fa fa-file"></i></span>Drag and drop an image here or click to upload.
+					</div>
+				</div>
+				<input type="hidden" id="txtMainImgID" name="txtMainImgID">
+			</div>
+			<div class='uk-width-1-1@s'>
+				<h2 class="uk-text-center">Galery Images</h2>
+				<div id="media-uploader1" name="media-uploader1" class="" style="">
+					<div class="dz-message" style="color:'.get_option('taxCrt-setting-font').';">
+						<span><i class="fa fa-file"></i></span>Drag and drop an image here or click to upload.
+					</div>
+				</div>
+				<input type="hidden" id="txtMainImgID" name="txtMainImgID">
+			</div>
+		</div>
+		<div class="uk-width-1-2">
+			<div class='uk-width-1-1@s'>
+				<h2 class="uk-text-center">Product Details</h2>
+				<hr />
+				<div class="uk-width-1-1@s">
+					<label class="uk-form-label" for="txtTitleId">ID</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="txtTitleIde" type="text" placeholder="P40 Warhawk">
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="txtDescription">Description</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="txtdESCRIPTION" type="text" placeholder="Curtiss">
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="txtCategory">Category</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="txtCategory" type="text" placeholder="1938">
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="txtPrice">Price</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="txtPrice" type="text" placeholder="2,000,000">
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="txtStatus">Status:</label>
+					<div class="uk-form-controls">
+						<input class="uk-input"  type="checkbos" placeholder="1938" id="Status" checked>
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="txtCode">Code</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="txtCode" type="text" placeholder="1938">
+					</div>
+				</div>
+				<div class="uk-margin">
+					<label class="uk-form-label" for="txtStock">Stock</label>
+					<div class="uk-form-controls">
+						<input class="uk-input" id="txtStock" type="number" placeholder="1938">
+					</div>
+				</div>
+				<input type = "submit" value="Send">
+	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="/socket.io/cocket.io.js"></script>
+<script src="/static/js/realTimeProducts.js"></script>
